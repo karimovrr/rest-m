@@ -1,0 +1,24 @@
+version: '2'
+services:
+    nginx-m:
+        container_name: nginx-m
+        image: nginx:1.10
+        volumes:
+            - ./:/var/www
+            - ./storage/docker/nginx:/etc/nginx
+        ports:
+            - "5050:80"
+        links:
+            - php
+        restart: always
+    php-m:
+        container_name: php-m
+        image: yiisoftware/yii2-php:7.2-fpm
+        volumes:
+            - ./:/var/www
+            - ./storage/docker/php:/usr/local/etc/php
+        environment:
+            - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+            - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
+            - TZ=Europe/Moscow
+        restart: always
