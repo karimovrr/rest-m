@@ -9,7 +9,7 @@ services:
         ports:
             - "5050:80"
         links:
-            - php
+            - php-m
         restart: always
     php-m:
         container_name: php-m
