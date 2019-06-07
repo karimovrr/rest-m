@@ -24,6 +24,7 @@ sudo apt install git \
     && chmod 0777 /var/www \
     && cd /var/www \
     && /usr/bin/git clone https://github.com/karimovrr/rest-m.git \
+    && cp /var/.env /var/www/rest-m/.env \
     && cd /var/www/rest-m \
     && /usr/local/bin/docker-compose up -d \
-    && /usr/bin/docker exec php /var/www/development.sh
+    && /usr/bin/docker exec php-m /var/www/development.sh
