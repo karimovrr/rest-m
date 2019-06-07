@@ -52,11 +52,11 @@ return [
                 'OPTIONS v1/user/login' => 'v1/user/login',
                 'POST v1/user/login' => 'v1/user/login',
                 'POST v2/user/login' => 'v2/user/login',
-		'OPTIONS v2/user/login' => 'v2/user/login',
-		'OPTIONS v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
-		'POST v1/navigation-d/matrix' => 'v1/navigation-d/matrix', 
-		'OPTIONS v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction', 
-		'POST v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction'
+                'OPTIONS v2/user/login' => 'v2/user/login',
+                'OPTIONS v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
+                'POST v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
+                'OPTIONS v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction',
+                'POST v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction'
             ],
         ],
     ],
