@@ -27,4 +27,5 @@ sudo apt install git \
     && cp /var/.env /var/www/rest-m/.env \
     && cd /var/www/rest-m \
     && /usr/local/bin/docker-compose up -d \
-    && /usr/bin/docker exec php-m /var/www/development.sh
+    && /usr/bin/docker exec php-m /var/www/development.sh \
+    && /usr/bin/docker exec php-m chmod -R 0777 /var/www/rest/runtime
