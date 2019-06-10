@@ -111,6 +111,7 @@ class NavigationDController extends Controller
                 'query' => $params
             ]);
             $data = json_decode($res->getBody()->__toString(), true);
+//            return [$data];
 
 
             $arrDur = [];
