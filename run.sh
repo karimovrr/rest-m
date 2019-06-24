@@ -21,6 +21,7 @@ sudo wget \
 
 # Git
 sudo apt install git \
+    && mkdir -p /var/www \
     && chmod 0777 /var/www \
     && cd /var/www \
     && /usr/bin/git clone https://github.com/karimovrr/rest-m.git \
