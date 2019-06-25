@@ -22,3 +22,13 @@ services:
             - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
             - TZ=Europe/Moscow
         restart: always
+    proxy-m:
+        container_name: proxy-m
+        image: riftbit/3proxy
+        ports:
+            - "3128:3128"
+        environment:
+            - PROXY_LOGIN=${PROXY_USER}
+            - PROXY_PASSWORD=${PROXY_PASS}
+        restart: always
+
