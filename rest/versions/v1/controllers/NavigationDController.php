@@ -12,6 +12,12 @@ use yii\web\NotFoundHttpException;
 class NavigationDController extends Controller
 {
 
+    public function actionTest() {
+        return [
+          'status' => 'Success'
+        ];
+    }
+
 
     protected function queryMapbox(string $path, iterable $data = null)
     {

@@ -48,7 +48,14 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-		    ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/post', 'v1/comment', 'v2/post',  'v1/navigation-d/matrix', 'v1/navigation-d/matrix-direction']],
+		    ['class' => 'yii\rest\UrlRule', 'controller' => [
+		        'v1/post',
+                'v1/comment',
+                'v2/post',
+                'v1/navigation-d/matrix',
+                'v1/navigation-d/matrix-direction',
+                'v1/navigation-d/test',
+            ]],
                 'OPTIONS v1/user/login' => 'v1/user/login',
                 'POST v1/user/login' => 'v1/user/login',
                 'POST v2/user/login' => 'v2/user/login',
@@ -56,8 +63,11 @@ return [
                 'OPTIONS v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
                 'POST v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
                 'OPTIONS v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction',
-                'POST v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction'
+                'POST v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction',
+                'OPTIONS v1/navigation-d/test' => 'v1/navigation-d/test',
+                'POST v1/navigation-d/test' => 'v1/navigation-d/test'
             ],
+
         ],
     ],
     'params' => $params,
