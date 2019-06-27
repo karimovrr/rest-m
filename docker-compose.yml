@@ -26,7 +26,7 @@ services:
         container_name: proxy-m
         image: riftbit/3proxy
         ports:
-            - "3128:3128"
+            - "3182:3128"
         environment:
             - PROXY_LOGIN=${PROXY_USER}
             - PROXY_PASSWORD=${PROXY_PASS}
