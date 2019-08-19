@@ -54,6 +54,7 @@ return [
                 'v2/post',
                 'v1/navigation-d/matrix',
                 'v1/navigation-d/matrix-direction',
+                'v1/navigation-d/matrix-direction-multi',
                 'v1/navigation-d/test',
             ]],
                 'OPTIONS v1/user/login' => 'v1/user/login',
@@ -64,6 +65,7 @@ return [
                 'POST v1/navigation-d/matrix' => 'v1/navigation-d/matrix',
                 'OPTIONS v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction',
                 'POST v1/navigation-d/matrix-direction' => 'v1/navigation-d/matrix-direction',
+                'POST v1/navigation-d/matrix-direction-multi' => 'v1/navigation-d/matrix-direction-multi',
                 'OPTIONS v1/navigation-d/test' => 'v1/navigation-d/test',
                 'POST v1/navigation-d/test' => 'v1/navigation-d/test'
             ],
