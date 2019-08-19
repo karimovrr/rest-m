@@ -220,10 +220,10 @@ class NavigationDController extends Controller
                         'query' => $params
                     ]);
                     $dataRes = json_decode($res->getBody()->__toString(), true);
-                    $res[] = compact('dataRes', 'addressQueue');
+                    $result[] = compact('dataRes', 'addressQueue');
 
                 }
-                return $res;
+                return $result;
             }
             throw new NotFoundHttpException('orTool is empty', 500);
         } catch (\Exception $e) {
