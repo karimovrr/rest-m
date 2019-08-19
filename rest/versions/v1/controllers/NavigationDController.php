@@ -185,4 +185,50 @@ class NavigationDController extends Controller
         }
     }
 
+    public function actionMatrixDirectionMulti() {
+        try {
+            $orTool = \Yii::$app->request->post('orTool', null);
+            $deliveryPoints = \Yii::$app->request->post('deliveryPoints', null);
+            $token = \Yii::$app->request->post('access_token', null);
+            $result = [];
+            if ($orTool && !empty($orTool['result'][0])) {
+                foreach ($orTool['result'] as $orToolRes) {
+                    $coordsDirection = '';
+                    foreach ($orToolRes as $orToolItem) {
+
+                        if (array_key_exists($orToolItem['index'], $deliveryPoints)) {
+                            $coordsDirection .= $deliveryPoints[$orToolItem['index']]['coord'];
+                            $addressQueue[] = $deliveryPoints[$orToolItem['index']];
+                        }
+
+                    }
+                    if (!empty($coordsDirection)) {
+                        $coordsDirection = substr_replace(trim($coordsDirection), '', -1);
+                    }
+                    $params = [
+                        'access_token' => $token,
+                        'geometries' => 'geojson',
+                        'language' => 'ru',
+                        'overview' => 'full',
+                        'steps' => 'true'
+                    ];
+                    $guzzle = new GuzzleClient();
+                    $res = $guzzle->request('GET', 'https://api.mapbox.com/directions/v5/mapbox/driving/' . trim($coordsDirection), [
+                        'headers' => [
+                            'Content-Type' => 'application/json',
+                        ],
+                        'query' => $params
+                    ]);
+                    $dataRes = json_decode($res->getBody()->__toString(), true);
+                    $res[] = compact('dataRes', 'addressQueue');
+
+                }
+                return $res;
+            }
+            throw new NotFoundHttpException('orTool is empty', 500);
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException($e->getMessage().'---'.$e->getLine().'---'.$e->getCode(), 500);
+        }
+    }
+
 }
