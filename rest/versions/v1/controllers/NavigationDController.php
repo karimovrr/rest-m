@@ -194,6 +194,7 @@ class NavigationDController extends Controller
             if ($orTool && !empty($orTool['result'][0])) {
                 foreach ($orTool['result'] as $orToolRes) {
                     $coordsDirection = '';
+                    $addressQueue = [];
                     foreach ($orToolRes as $orToolItem) {
 
                         if (array_key_exists($orToolItem['index'], $deliveryPoints)) {
